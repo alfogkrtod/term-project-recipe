@@ -4,6 +4,10 @@
  * PDO를 사용한 MySQL 연결 설정
  */
 
+// 개발 중에 에러를 화면에 표시하도록 설정
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
 // DB 설정 정보
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'recipe_db');

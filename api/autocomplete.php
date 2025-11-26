@@ -14,7 +14,21 @@ try {
     }
     
     $suggestions = searchAutocomplete($query, 10);
-    sendJsonResponse(['suggestions' => $suggestions]);
+
+    // 디버그 모드: 전체 재료 수와 샘플을 함께 반환 (개발용)
+    if (isset($_GET['debug']) && $_GET['debug']) {
+        $allIngredients = getAllIngredients();
+        sendJsonResponse([
+            'suggestions' => $suggestions,
+            'debug' => [
+                'query' => $query,
+                'totalIngredients' => count($allIngredients),
+                'sampleIngredients' => array_values(array_slice($allIngredients, 0, 10))
+            ]
+        ]);
+    } else {
+        sendJsonResponse(['suggestions' => $suggestions]);
+    }
     
 } catch (Exception $e) {
     error_log("Autocomplete error: " . $e->getMessage());

@@ -3,6 +3,10 @@
  * 공통 함수 파일
  */
 
+// 개발 중에 에러를 화면에 표시하도록 설정
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
 require_once __DIR__ . '/../config/db.php';
 require_once __DIR__ . '/krayhangeul.php';
 
