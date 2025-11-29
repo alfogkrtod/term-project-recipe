@@ -1,0 +1,10 @@
+변수명,타입,변수설명,값설명
+keyId,STRING(필수),인증키,OepnAPI 에서 발급된 인증키
+serviceId,STRING(필수),서비스명,요청대상인 해당 서비스명
+dataType,STRING(필수),요청파일 타입,xml : xml파일/json : json파일
+startIdx,STRING(필수),요청시작위치,정수입력
+endIdx,STRING(필수),요청종료위치,정수입력
+RCP_NM,STRING(선택),메뉴명,추가 파라미터값
+RCP_PARTS_DTLS,STRING(선택),재료정보1,추가 파라미터값
+CHNG_DT,STRING(선택),변경일자(YYYYMMDD),변경일자 기준 이후 자료를 출력한다. 정수입력 : 20170101 (2017년 1월 1일)
+RCP_PAT2,STRING(선택),요리종류(ex) 반찬/국/후식 등),추가 파라미터값
