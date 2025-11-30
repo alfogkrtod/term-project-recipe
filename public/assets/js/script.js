@@ -171,7 +171,8 @@ async function searchRecipes(page = 1) {
     
     try {
         const ingredientsParam = selectedIngredients.map(ing => encodeURIComponent(ing)).join(',');
-        const response = await fetch(`api/search.php?ingredients=${ingredientsParam}&page=${page}`);
+        // Call server-side proxy that queries the external API (JSON only)
+        const response = await fetch(`api/recipes_proxy.php?ingredients=${ingredientsParam}&page=${page}`);
         const data = await response.json();
         
         if (data.error) {
